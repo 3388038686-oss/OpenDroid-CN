@@ -1,8 +1,8 @@
 {
   "formatVersion": 1,
   "database": {
-    "version": 7,
-    "identityHash": "f0ecc2c35055438b40d0f7d7d22e828b",
+    "version": 6,
+    "identityHash": "4e53326f14505d186783b4c7db2236e6",
     "entities": [
       {
         "tableName": "conversations",
@@ -552,100 +552,6 @@
             "id"
           ]
         }
-      },
-      {
-        "tableName": "crash_logs",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `timestamp` INTEGER NOT NULL, `exceptionClass` TEXT NOT NULL, `message` TEXT, `threadName` TEXT NOT NULL, `stackTrace` TEXT NOT NULL, `appVersionName` TEXT NOT NULL, `appVersionCode` INTEGER NOT NULL, `androidRelease` TEXT NOT NULL, `androidSdkInt` INTEGER NOT NULL, `deviceManufacturer` TEXT NOT NULL, `deviceModel` TEXT NOT NULL)",
-        "fields": [
-          {
-            "fieldPath": "id",
-            "columnName": "id",
-            "affinity": "INTEGER",
-            "notNull": true
-          },
-          {
-            "fieldPath": "timestamp",
-            "columnName": "timestamp",
-            "affinity": "INTEGER",
-            "notNull": true
-          },
-          {
-            "fieldPath": "exceptionClass",
-            "columnName": "exceptionClass",
-            "affinity": "TEXT",
-            "notNull": true
-          },
-          {
-            "fieldPath": "message",
-            "columnName": "message",
-            "affinity": "TEXT"
-          },
-          {
-            "fieldPath": "threadName",
-            "columnName": "threadName",
-            "affinity": "TEXT",
-            "notNull": true
-          },
-          {
-            "fieldPath": "stackTrace",
-            "columnName": "stackTrace",
-            "affinity": "TEXT",
-            "notNull": true
-          },
-          {
-            "fieldPath": "device.appVersionName",
-            "columnName": "appVersionName",
-            "affinity": "TEXT",
-            "notNull": true
-          },
-          {
-            "fieldPath": "device.appVersionCode",
-            "columnName": "appVersionCode",
-            "affinity": "INTEGER",
-            "notNull": true
-          },
-          {
-            "fieldPath": "device.androidRelease",
-            "columnName": "androidRelease",
-            "affinity": "TEXT",
-            "notNull": true
-          },
-          {
-            "fieldPath": "device.androidSdkInt",
-            "columnName": "androidSdkInt",
-            "affinity": "INTEGER",
-            "notNull": true
-          },
-          {
-            "fieldPath": "device.deviceManufacturer",
-            "columnName": "deviceManufacturer",
-            "affinity": "TEXT",
-            "notNull": true
-          },
-          {
-            "fieldPath": "device.deviceModel",
-            "columnName": "deviceModel",
-            "affinity": "TEXT",
-            "notNull": true
-          }
-        ],
-        "primaryKey": {
-          "autoGenerate": true,
-          "columnNames": [
-            "id"
-          ]
-        },
-        "indices": [
-          {
-            "name": "index_crash_logs_timestamp",
-            "unique": false,
-            "columnNames": [
-              "timestamp"
-            ],
-            "orders": [],
-            "createSql": "CREATE INDEX IF NOT EXISTS `index_crash_logs_timestamp` ON `${TABLE_NAME}` (`timestamp`)"
-          }
-        ]
       }
     ],
     "setupQueries": [
